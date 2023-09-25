@@ -15,7 +15,7 @@ const Detail = ({ category }) => {
             localStorage.setItem('donated', JSON.stringify(added))
             swal("Good job!", "You have donated successfully!", "success");
         }
-        const exists = donated.find(item => item.id == id)
+        const exists = donated?.find(item => item.id == id)
         if (!exists) {
             added.push(...donated, category)
             localStorage.setItem('donated', JSON.stringify(added))
