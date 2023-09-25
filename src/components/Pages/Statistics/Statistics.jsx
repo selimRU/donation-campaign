@@ -53,8 +53,8 @@ const Statistics = () => {
     };
     return (
         <div>
-            <div className=' flex justify-center'>
-                <PieChart width={500} height={500}>
+            <div className='flex justify-center'>
+                <PieChart width={400} height={400}>
                     <Pie
                         dataKey="price"
                         data={data}
@@ -72,7 +72,7 @@ const Statistics = () => {
                     <Legend />
                 </PieChart>
             </div>
-            <div className=' flex items-center gap-10 justify-center'>
+            <div className=' flex flex-col md:flex-row items-center gap-10 justify-center'>
                 <div className=' flex gap-3 items-center'>
                     <p className=' text-[#0B0B0B] text-base'>Total Donation: {remaining} %</p>
                     <div className=' bg-[#00C49F] w-[100px] h-[12px]'></div>

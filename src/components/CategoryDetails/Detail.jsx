@@ -7,9 +7,7 @@ const Detail = ({ category }) => {
 
     const handleDonation = () => {
         const added = []
-        console.log(added);
         const donated = JSON.parse(localStorage.getItem('donated'))
-        console.log(donated);
         if (!donated) {
             added.push(category)
             localStorage.setItem('donated', JSON.stringify(added))
