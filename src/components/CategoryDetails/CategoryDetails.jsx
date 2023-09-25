@@ -7,6 +7,7 @@ const CategoryDetails = () => {
     const categories = useLoaderData();
     const category = categories.find(item => item.id == id)
     console.log(category);
+
     return (
         <div>
             <Detail category={category}></Detail>

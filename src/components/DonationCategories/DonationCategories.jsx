@@ -8,6 +8,7 @@ const DonationCategories = ({ categories }) => {
     const handleCategoryDetails = (id) => {
         navigate(`/details/${id}`)
     }
+
     return (
         <div className=' grid md:grid-cols-2 lg:grid-cols-4 gap-6 items-center max-w-6xl mx-auto mt-20 px-5 md:px-5 lg:px-0'>
             {
