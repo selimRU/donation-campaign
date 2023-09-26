@@ -69,16 +69,15 @@ const Statistics = () => {
                             <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                         ))}
                     </Pie>
-                    <Legend />
                 </PieChart>
             </div>
             <div className=' flex flex-col md:flex-row items-center gap-10 justify-center'>
                 <div className=' flex gap-3 items-center'>
-                    <p className=' text-[#0B0B0B] text-base'>Total Donation: {remaining} %</p>
+                    <p className=' text-[#0B0B0B] text-base'>Total Donation</p>
                     <div className=' bg-[#00C49F] w-[100px] h-[12px]'></div>
                 </div>
                 <div className=' flex gap-3 items-center'>
-                    <p className=' text-[#0B0B0B] text-base'>My Donation: {donationPercentage} %</p>
+                    <p className=' text-[#0B0B0B] text-base'>My Donation</p>
                     <div className=' bg-[#FF444A] w-[100px] h-[12px]'></div>
                 </div>
             </div>
