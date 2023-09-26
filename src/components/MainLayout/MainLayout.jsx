@@ -6,7 +6,9 @@ import Footer from '../Shared/Footer/Footer';
 const MainLayout = () => {
     return (
         <div>
-            <Nav></Nav>
+            <div className=' relative z-50'>
+                <Nav></Nav>
+            </div>
             <Outlet></Outlet>
             <Footer></Footer>
         </div>

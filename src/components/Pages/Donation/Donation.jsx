@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import DonatedCard from "./DonatedCard";
 import { Link } from "react-router-dom";
-
-
+import img from "../../../assets/Resources/donate.jpg"
+import './Donation.css'
 const Donation = () => {
     const [donations, setDonations] = useState([])
     const [isSeeAll, setIsSeeAll] = useState(false)
@@ -13,19 +13,19 @@ const Donation = () => {
         if (donated) {
             setDonations(donated)
         } else {
-            setNoData('No Data Found')
+            setNoData('You have not given any donation')
         }
 
     }, [])
 
-    const handleSeeAll = () => {
-        setIsSeeAll(!false)
-    }
+    // const handleSeeAll = () => {
+
+    // }
 
     const handleDeleteAll = () => {
         localStorage.clear()
         setDonations([])
-        setNoData('No Data Found')
+        setNoData('You have not given any donation')
     }
     return (
         <div>
@@ -40,7 +40,10 @@ const Donation = () => {
                 </div>
             </div>
             {
-                noData ? <p className=' text-2xl text-center font-semibold mt-20'>{noData}</p> :
+                noData ? <div>
+                    <img className="don w-[150px] h-[150px] mx-auto rounded-full mt-5" src={img} alt="" />
+                    <p className=' text-2xl text-center font-semibold mt-20'>{noData}</p>
+                </div> :
                     !isSeeAll ?
                         <div className=" grid md:grid-cols-2 lg:grid-cols-2 max-w-6xl mx-auto gap-4 mt-20 px-5">
                             {
@@ -54,8 +57,8 @@ const Donation = () => {
                         </div>
             }
 
-            <div onClick={handleSeeAll} className={`flex justify-center py-10 ${isSeeAll && donations.length > 4 ? 'hidden' : ''} ${donations.length < 4 && 'hidden'}`}>
-                <button className=' bg-[#009444] rounded-md px-8 text-[#FFF] py-2'>See All</button>
+            <div onClick={() => setIsSeeAll(!isSeeAll)} className={`flex justify-center py-10  ${donations.length < 4 && 'hidden'}`}>
+                <button className=' bg-[#009444] rounded-md px-8 text-[#FFF] py-2'>{isSeeAll && donations.length > 4 ? 'See Less' : 'See All'}</button>
             </div>
             <Link to='/'><div className={`flex justify-center py-10 ${donations.length > 0 && 'hidden'}`}>
                 <button className=' bg-[#009444] rounded-md px-8 text-[#FFF] py-2'>Go Back Home</button>

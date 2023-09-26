@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import bg from "../../assets/Resources/donor.png";
+import bg from "../../assets/Resources/bg.png";
 import Category from "../Category/Category";
 import BannerCard from "./BannerCard";
 const Banner = ({ categories, foundData, handleSearch, handleinput }) => {
@@ -8,13 +8,13 @@ const Banner = ({ categories, foundData, handleSearch, handleinput }) => {
         navigate(`/details/${id}`)
     }
     return (
-        <div>
+        <div className="-mt-[90px] md:-mt-[115px] lg:-mt-[170px] z-0">
             <div className='relative'>
-                <div className="lg:h-[450px]">
-                    <img className=" h-full w-full" src={bg} alt="" />
+                <div className="  md:h-[450px] lg:h-[450px]">
+                    <img className="h-[400px] md:h-full md:w-full" src={bg} alt="" />
                 </div>
                 <div className=" bg-[#FFFFFFF2] w-full h-full absolute bottom-0"></div>
-                <div className=" absolute bottom-[30%] md:bottom-[20%] lg:bottom-[45%] md:left-[25%] left-[10%]  lg:left-[30%]">
+                <div className=" absolute bottom-[30%] md:bottom-[40%] lg:bottom-[35%] md:left-[25%] left-[10%]  lg:left-[30%]">
                     <h2 className=' md:text-2xl lg:text-4xl font-bold text-center text-[#0B0B0B] pb-10 placeholder:text-xs'>I Grow By Helping People In Need</h2>
                     <div className=' flex items-center justify-center'>
                         <input onChange={handleinput} className=' border py-[5px] rounded-l-md px-5' type="text" placeholder='Search here' />
@@ -39,3 +39,4 @@ const Banner = ({ categories, foundData, handleSearch, handleinput }) => {
 };
 
 export default Banner;
+

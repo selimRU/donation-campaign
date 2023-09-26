@@ -1,0 +1,21 @@
+.don{
+    position: relative;
+    animation-name: example;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-delay: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+@keyframes example {
+    0%   {
+        left:0px; top:0px;}
+    25%  {
+         left:90px; top:0px;}
+    50%  {
+         left:-90px; top:50px;}
+    75%  {
+         left:0px; top:50px;}
+    100% {
+        left:0px; top:0px;}
+  }
