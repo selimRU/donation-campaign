@@ -28,7 +28,7 @@ const Donation = () => {
         setNoData('You have not given any donation')
     }
     return (
-        <div>
+        <div className=" max-w-6xl mx-auto">
             <div>
                 <div className={`flex justify-center ${donations.length <= 0 && 'hidden'}`}>
                     <button onClick={handleDeleteAll}
@@ -41,8 +41,8 @@ const Donation = () => {
             </div>
             {
                 noData ? <div>
-                    <img className="don w-[150px] h-[150px] mx-auto rounded-full mt-5" src={img} alt="" />
-                    <p className=' text-2xl text-center font-semibold mt-20'>{noData}</p>
+                    <img className="don w-[80px] h-[80px] md:w-[100px] md:h-[100px] lg:w-[150px] lg:h-[150px]  mx-auto rounded-full mt-5" src={img} alt="" />
+                    <p className=' text-sm lg:text-2xl text-center font-semibold mt-20'>{noData}</p>
                 </div> :
                     !isSeeAll ?
                         <div className=" grid md:grid-cols-2 lg:grid-cols-2 max-w-6xl mx-auto gap-4 mt-20 px-5">
