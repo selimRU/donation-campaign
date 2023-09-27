@@ -5,6 +5,8 @@ const Home = () => {
     const [categories, setCategories] = useState([])
     const [query, setQuery] = useState('')
     const [foundData, setFoundData] = useState([])
+    const [error, setError] = useState('')
+    const [noMatch, setNoMatch] = useState('')
 
     useEffect(() => {
         fetch('donation.json')
@@ -16,19 +18,24 @@ const Home = () => {
     }, [])
 
     const handleinput = (e) => {
-        e.preventDefault()
         setQuery(e.target.value)
 
     }
     const handleSearch = () => {
+
+        if (query.length === 0) {
+            setError('Opps! write something first')
+        }
         const filtered = categories?.filter(item => item.category_name?.toLowerCase().includes(query.toLowerCase()));
         setFoundData([...filtered])
         setCategories([])
-        setQuery('')
     }
     return (
         <div>
-            <Banner handleinput={handleinput} foundData={foundData} categories={categories} handleSearch={handleSearch}></Banner>
+            <Banner 
+                query={query} error={error}
+                handleinput={handleinput} foundData={foundData}
+                categories={categories} handleSearch={handleSearch}></Banner>
         </div>
     );
 };

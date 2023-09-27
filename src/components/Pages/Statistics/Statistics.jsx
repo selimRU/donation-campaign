@@ -2,18 +2,20 @@ import React, { useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { PieChart, Pie, Cell, Legend } from 'recharts';
 
-const COLORS = ['#FF444A', '#00C49F'];
+
 
 const Statistics = () => {
     const [donated, setDonated] = useState([]);
-    const [totalPrice, setTotalPrice] = useState(0);
-
+    
+    const COLORS = ['#FF444A', '#00C49F'];
 
     const donations = useLoaderData()
-    const total = donations.reduce((pre, item) => pre + item.price, 0)
+    const totalDonation = donations.length
 
-    const donationPercentage = parseInt((totalPrice / total) * 100);
-    const remaining = 100 - donationPercentage
+    // calculation part of given donations and remaining donations percentage
+    const donatedPercentages = (donated.length / totalDonation) * 100;
+    const remaining = 100 - donatedPercentages
+
 
     useEffect(() => {
         const localStorageData = localStorage.getItem('donated');
@@ -22,20 +24,12 @@ const Statistics = () => {
         }
     }, []);
 
-    useEffect(() => {
-
-        const calculatedTotalPrice = donated.reduce((total, item) => total + item.price, 0);
-        setTotalPrice(calculatedTotalPrice);
-    }, [donated]);
-
-
-
     const data = [
         {
-            data: 'price', price: donationPercentage
+            data: 'donation', quantity: donatedPercentages
         },
         {
-            data: 'price', price: remaining
+            data: 'donation', quantity: remaining
         }
     ]
 
@@ -56,7 +50,7 @@ const Statistics = () => {
             <div className='flex justify-center'>
                 <PieChart width={400} height={400}>
                     <Pie
-                        dataKey="price"
+                        dataKey="quantity"
                         data={data}
                         cx={200}
                         cy={200}
