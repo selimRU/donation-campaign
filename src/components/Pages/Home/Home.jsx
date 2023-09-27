@@ -6,7 +6,6 @@ const Home = () => {
     const [query, setQuery] = useState('')
     const [foundData, setFoundData] = useState([])
     const [error, setError] = useState('')
-    const [noMatch, setNoMatch] = useState('')
 
     useEffect(() => {
         fetch('donation.json')

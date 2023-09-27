@@ -17,7 +17,7 @@ const Banner = ({ categories, foundData, handleSearch, handleinput, error, query
                         <input onChange={handleinput} className=' border py-[5px] rounded-l-md  lg:px-5' type="text" placeholder='Search here' value={query} />
                         <button onClick={handleSearch} className=' bg-[#FF444A] text-sm text-[#FFF] font-semibold px-5 py-[8px] rounded-r-md'>Search</button>
                     </div>
-                    <p className=" text-red-500 text-xs py-3 pl-[2px] lg:pl-[115px] md:pl-[18px]">{error}</p>
+                    <p className=" text-red-500 text-xs py-3 pl-[2px] lg:pl-[110px] md:pl-[38px]">{error}</p>
                 </div>
             </div>
             <div>
