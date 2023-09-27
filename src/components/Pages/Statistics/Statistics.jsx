@@ -46,7 +46,7 @@ const Statistics = () => {
         );
     };
     return (
-        <div>
+        <div className=' max-w-6xl mx-auto'>
             <div className='flex justify-center'>
                 <PieChart width={400} height={400}>
                     <Pie
@@ -54,7 +54,7 @@ const Statistics = () => {
                         data={data}
                         cx={200}
                         cy={200}
-                        outerRadius={150}
+                        outerRadius={100}
                         fill="#8884d8"
                         labelLine={false}
                         label={renderCustomizedLabel}

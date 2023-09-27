@@ -47,7 +47,7 @@ const Nav = () => {
             </div>
             <div className=' hidden lg:flex lg:flex-row-reverse justify-between items-center'>
                 <div>
-                    <ul className="flex gap-3">
+                    <ul className="flex gap-3 text-lg">
                         <li>
                             <NavLink
                                 to="/"

@@ -23,7 +23,7 @@ const Banner = ({ categories, foundData, handleSearch, handleinput, error, query
             <div>
                 <BannerCard foundData={foundData}></BannerCard>
             </div>
-            <div className=' grid md:grid-cols-2 lg:grid-cols-4 gap-6 items-center max-w-6xl mx-auto mt-20 px-5 md:px-5 lg:px-0'>
+            <div className=' grid md:grid-cols-2 lg:grid-cols-4 gap-6 items-center max-w-6xl mx-auto lg:mt-20 mt-10 px-5 md:px-5 lg:px-0'>
                 {
                     categories?.map(category => <Category
                         key={category.id}

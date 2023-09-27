@@ -50,7 +50,7 @@ const Donation = () => {
                                 donations.slice(0, 4).map(item => <DonatedCard key={item.id} item={item}></DonatedCard>)
                             }
                         </div> :
-                        <div className=" grid md:grid-cols-2 lg:grid-cols-2 max-w-6xl mx-auto gap-4 mt-20 px-5">
+                        <div className=" grid md:grid-cols-2 lg:grid-cols-2 max-w-6xl mx-auto gap-4  px-5">
                             {
                                 donations.map(item => <DonatedCard key={item.id} item={item}></DonatedCard>)
                             }

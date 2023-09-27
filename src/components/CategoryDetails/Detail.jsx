@@ -28,9 +28,9 @@ const Detail = ({ category }) => {
     return (
         <div className=' w-full lg:max-w-6xl l lg:mx-auto mt-20 px-5'>
             <div className='relative'>
-                <img className=' w-full h-[500px] rounded-b-xl lg:rounded-b-3xl md:rounded-b-2xl' src={img_details} alt="" />
-                <div className=' w-full h-[80px] absolute bg-[#0B0B0B80] bottom-0 rounded-b-xl lg:rounded-b-3xl md:rounded-b-2xl'>
-                    <button style={{backgroundColor:categoryTextColor}} onClick={handleDonation} className=' text-[#FFF] px-4 py-2 rounded-md mt-5 ml-5'>Donate ${price}</button>
+                <img className=' w-full lg:h-[500px] rounded-b-xl lg:rounded-b-3xl md:rounded-b-2xl' src={img_details} alt="" />
+                <div className=' w-full h-[60px] lg:h-[80px] absolute bg-[#0B0B0B80] bottom-0 rounded-b-xl lg:rounded-b-3xl md:rounded-b-2xl'>
+                    <button style={{backgroundColor:categoryTextColor}} onClick={handleDonation} className=' text-[#FFF] px-2 lg:px-4 py-1 lg:py-2 rounded-md mt-[14px] lg:mt-5 ml-5'>Donate ${price}</button>
                 </div>
             </div>
             <p className=' text-[#0B0B0B] text-3xl font-bold mt-10 mb-3'>{title}</p>
