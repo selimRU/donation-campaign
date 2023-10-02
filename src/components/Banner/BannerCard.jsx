@@ -11,7 +11,6 @@ const BannerCard = ({ foundData }) => {
                     category={category}></Card>)
             }
         </div>
-
     );
 };
 

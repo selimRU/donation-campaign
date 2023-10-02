@@ -1,7 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import logo from '../../../assets/Resources/Logo.png'
+import { Context } from '../../AuthContext/AuthContext';
 const Nav = () => {
+    const { user, logOut } = useContext(Context)
+
+    const handleLogOut = () => {
+        logOut()
+    }
     return (
         <div className=' max-w-6xl mx-auto px-5 lg:px-0 py-[20px] lg:py-[50px]' >
             <div className=" lg:hidden flex justify-between items-center">
@@ -10,7 +16,7 @@ const Nav = () => {
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                         </label>
-                        <ul tabIndex={0} className=" text-sm dropdown-content mt-3 z-[1] p-2 rounded-box w-52">
+                        <ul tabIndex={0} className=" text-sm dropdown-content mt-3 space-y-3 z-[1] p-2 rounded-box w-52">
                             <li>
                                 <NavLink
                                     to="/"
@@ -38,6 +44,22 @@ const Nav = () => {
                                 >Statistics
                                 </NavLink>
                             </li>
+                            {!user ?
+                                <li>
+                                    <NavLink
+                                        to="/login"
+                                        className="bg-slate-600 text-white px-3 py-1 rounded-md font-bold"
+                                    >LogIn
+                                    </NavLink>
+                                </li> :
+                                <li>
+                                    <NavLink onClick={handleLogOut}
+                                        to="/login"
+                                        className="bg-slate-600 text-white px-3 py-1 rounded-md font-bold"
+                                    >Sign Out
+                                    </NavLink>
+                                </li>
+                            }
                         </ul>
                     </div >
                 </div >
@@ -75,6 +97,22 @@ const Nav = () => {
                             >Statistics
                             </NavLink>
                         </li>
+                        {!user ?
+                            <li>
+                                <NavLink
+                                    to="/login"
+                                    className="bg-slate-600 text-white px-3 py-1 rounded-md font-bold"
+                                >LogIn
+                                </NavLink>
+                            </li> :
+                            <li>
+                                <NavLink onClick={handleLogOut}
+                                    to="/login"
+                                    className="bg-slate-600 text-white px-3 py-1 rounded-md font-bold"
+                                >Sign Out
+                                </NavLink>
+                            </li>
+                        }
                     </ul>
                 </div>
                 <div>

@@ -21,9 +21,11 @@ const Home = () => {
 
     }
     const handleSearch = () => {
+        setQuery('')
 
         if (query.length === 0) {
             setError('Opps! write something first')
+            return;
         }
         const filtered = categories?.filter(item => item.category_name?.toLowerCase().includes(query.toLowerCase()));
         setFoundData([...filtered])
@@ -31,7 +33,7 @@ const Home = () => {
     }
     return (
         <div>
-            <Banner 
+            <Banner
                 query={query} error={error}
                 handleinput={handleinput} foundData={foundData}
                 categories={categories} handleSearch={handleSearch}></Banner>

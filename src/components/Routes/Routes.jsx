@@ -5,6 +5,9 @@ import Home from "../Pages/Home/Home";
 import Donation from "../Pages/Donation/Donation";
 import Statistics from "../Pages/Statistics/Statistics";
 import CategoryDetails from "../CategoryDetails/CategoryDetails";
+import Login from "../Login/Login";
+import SignIn from "../SignIn/SignIn";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -14,20 +17,30 @@ const router = createBrowserRouter([
         children: [
             {
                 path: '/',
-                element: <Home></Home> 
+                element: <Home></Home>
             },
             {
                 path: '/details/:id',
-                element: <CategoryDetails></CategoryDetails>,
+                element: <PrivateRoute><CategoryDetails></CategoryDetails></PrivateRoute>,
                 loader: () => fetch('../donation.json')
             },
             {
+                path: '/login',
+                element: <Login></Login>,
+
+            },
+            {
+                path: '/signup',
+                element: <SignIn></SignIn>,
+
+            },
+            {
                 path: '/donation',
-                element: <Donation></Donation>,
+                element: <PrivateRoute><Donation></Donation></PrivateRoute>,
             },
             {
                 path: '/statistics',
-                element: <Statistics></Statistics>,
+                element: <PrivateRoute><Statistics></Statistics></PrivateRoute>,
                 loader: () => fetch('../donation.json')
             }
         ]
